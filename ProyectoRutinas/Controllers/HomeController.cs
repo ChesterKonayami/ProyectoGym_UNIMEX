@@ -1,8 +1,8 @@
 ﻿/*
  SEMANA 11
- GRUPO:SCOMA116
+ GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
- */
+*/
 
 /*
 =========================================================
@@ -13,41 +13,35 @@ MÓDULO:
 Navegación Pública
 
 DESCRIPCIÓN:
-Controlador principal de la aplicación.
+Controlador principal encargado de administrar
+las vistas públicas de la aplicación.
 
 RESPONSABILIDAD:
-Gestionar las vistas públicas del sistema,
-como la página de inicio y el contenido accesible
-sin necesidad de iniciar sesión.
+Gestionar la navegación entre la página de inicio
+y la sección de rutinas, disponibles para cualquier
+usuario sin necesidad de iniciar sesión.
 =========================================================
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ProyectoRutinas.Controllers
 {
     public class HomeController : Controller
     {
+        // =========================================
+        // Página principal de la aplicación
+        // =========================================
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        // =========================================
+        // Muestra la rutina de entrenamiento
+        // =========================================
+        public ActionResult Rutina()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

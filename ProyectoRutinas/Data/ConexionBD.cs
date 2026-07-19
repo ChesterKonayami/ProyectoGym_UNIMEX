@@ -1,6 +1,6 @@
 ﻿/*
  SEMANA 11
- GRUPO:SCOMA116
+ GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
  */
 
@@ -23,14 +23,29 @@ de servicios.
 =========================================================
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace ProyectoRutinas.Data
 {
     public class ConexionBD
     {
+        // =========================================
+        // Configuración oficial de conexión
+        // Proyecto: ProyectoRutinas
+        // Servidor: 127.0.0.1
+        // Base de datos: proyectogym
+        // Usuario: root
+        // Contraseña: (vacía)
+        // =========================================
+
+        private readonly string cadenaConexion =
+            "Server=127.0.0.1;Database=proyectogym;Uid=root;Pwd=;";
+
+        /// Crea y devuelve una conexión a la base de datos.
+        public MySqlConnection ObtenerConexion()
+        {
+            return new MySqlConnection(cadenaConexion);
+        }
     }
 }

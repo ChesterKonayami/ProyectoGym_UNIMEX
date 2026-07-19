@@ -1,6 +1,6 @@
 ﻿/*
  SEMANA 11
- GRUPO:SCOMA116
+ GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
  */
 
@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoRutinas.Models
 {

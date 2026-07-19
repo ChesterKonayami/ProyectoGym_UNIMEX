@@ -23,14 +23,34 @@ del usuario.
 =========================================================
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Mvc;
 
 namespace ProyectoRutinas.Controllers
 {
-    public class AccountController
+    public class AccountController : Controller
     {
+        // =========================================
+        // Muestra la vista de registro de usuarios
+        // =========================================
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        // =========================================
+        // Muestra la vista de inicio de sesión
+        // =========================================
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        // =========================================
+        // Muestra la vista del perfil del usuario
+        // =========================================
+        public ActionResult Profile()
+        {
+            return View();
+        }
     }
 }
