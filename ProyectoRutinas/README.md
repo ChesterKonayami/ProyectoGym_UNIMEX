@@ -97,10 +97,10 @@ La arquitectura general, la documentación técnica y la estructura base del pro
 
 # Equipo de Desarrollo
 
-- Integrante 1
-- Integrante 2
-- Integrante 3
-- Integrante 4
+- Erik Alexander Aguilar Reyes
+- Adhara Paola Baas Salazar
+- Fernanda Roberta Flores Garduño 
+- Joseph Mauricio Mondragón Moreno
 
 ---
 

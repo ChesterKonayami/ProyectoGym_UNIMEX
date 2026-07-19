@@ -8,12 +8,12 @@ Definir la organización del equipo de desarrollo, asignando responsabilidades, 
 
 # Integrantes del Equipo
 
-| Integrante   |         Rama Git | Responsabilidad |   Estado  |
-|--------------|------------------|-----------------|-----------|
-| Integrante 1 | feature/home     |       Pendiente | Pendiente |
-| Integrante 2 | feature/account  |       Pendiente | Pendiente |
-| Integrante 3 | feature/database |       Pendiente | Pendiente |
-| Integrante 4 | feature/profile  |       Pendiente | Pendiente |
+|    Integrante      |    Rama Git      | Responsabilidad |   Estado  |
+|--------------------|------------------|-----------------|-----------|
+| Erik Aguilar       | Pendiente        |       Pendiente | Pendiente |
+| Adhara Baas        | Pendiente        |       Pendiente | Pendiente |
+| Fernanda Flores    | Pendiente        |       Pendiente | Pendiente |
+| Mauricio Mondragón | Pendiente        |       Pendiente | Pendiente |
 
 ---
 
@@ -31,7 +31,7 @@ Los cambios serán integrados posteriormente a la rama principal.
 
 |       Rama       |                             Descripción                              |
 |------------------|----------------------------------------------------------------------|
-| master             | Rama principal del proyecto. Contiene únicamente versiones estables. |
+| master           | Rama principal del proyecto. Contiene únicamente versiones estables. |
 | feature/home     | Desarrollo de la página principal y navegación pública.              |
 | feature/account  | Desarrollo del registro, login y autenticación.                      |
 | feature/database | Desarrollo de la conexión con la base de datos, modelos y servicios. |
