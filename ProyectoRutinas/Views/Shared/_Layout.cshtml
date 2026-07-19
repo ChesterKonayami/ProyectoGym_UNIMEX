@@ -1,0 +1,88 @@
+﻿<!--
+ SEMANA 11
+ GRUPO:SCOMA116
+ CARRERA: SISTEMAS COMPUTACIONALES
+-->
+<!--
+=========================================================
+PROYECTO: ProyectoRutinas
+ARCHIVO: _Layout.cshtml
+
+DESCRIPCIÓN:
+Plantilla principal de la aplicación.
+
+RESPONSABILIDAD:
+Definir la estructura común de todas las vistas,
+incluyendo la barra de navegación, el pie de página
+y la carga de estilos y scripts compartidos.
+
+=========================================================
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Configuración de codificación y adaptación para dispositivos -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título dinámico de la página -->
+    <title>@ViewBag.Title - SEMANA 11</title>
+
+    <!-- Hojas de estilo del proyecto -->
+    @Styles.Render("~/Content/css")
+
+    <!-- Librería Modernizr -->
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+
+            <!-- Nombre del proyecto -->
+            @Html.ActionLink("SEMANA 11", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            <!-- Botón para dispositivos móviles -->
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("PAGINA 1", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("PAGINA 2", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("PAGINA 3", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Contenido principal de cada vista -->
+    <div class="container body-content">
+
+        @RenderBody()
+
+        <hr />
+
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </footer>
+
+    </div>
+
+    <!-- Librerías JavaScript -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!-- Scripts específicos de cada vista -->
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
