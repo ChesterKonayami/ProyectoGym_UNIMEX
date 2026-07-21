@@ -2,6 +2,8 @@
  SEMANA 11
  GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
+
+ RAMA: MONDRAGON MORENO JOSEPH MAURICIO
 -->
 <!--=========================================
 PROYECTO: ProyectoRutinas
@@ -20,12 +22,215 @@ una nueva cuenta de usuario y almacenarla en
 la base de datos.
 ==========================================-->
 
+@model ProyectoRutinas.Models.Usuario
+
 @{
     ViewBag.Title = "Registro de Usuario";
 }
 
+<!-- =========================================
+     TÍTULO DE LA PÁGINA
+========================================= -->
+
 <h2>Registro de Usuario</h2>
 
 <p>
-    Vista en construcción.
+    Complete la siguiente información para crear una cuenta.
 </p>
+
+<hr />
+
+<!-- =========================================
+     CONTENEDOR PRINCIPAL
+========================================= -->
+
+<div class="row">
+
+    <!-- =====================================
+         COLUMNA IZQUIERDA
+         FORMULARIO DE REGISTRO
+    ====================================== -->
+
+    <div class="col-md-8">
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+
+            <!-- =====================================
+                 DATOS PERSONALES
+            ====================================== -->
+
+            <div>
+
+                <label for="Nombre">Nombre</label><br />
+
+                @Html.TextBoxFor(
+                    model => model.Nombre,
+                    new
+                    {
+                        placeholder = "Ingrese su nombre"
+                    })
+                <br />
+                @Html.ValidationMessageFor(
+                    model => model.Nombre,
+                    "",
+                    new { style = "color:red;" })
+
+                <br />
+
+                <label for="ApellidoPaterno">Apellido Paterno</label><br />
+
+                @Html.TextBoxFor(
+                    model => model.ApellidoPaterno,
+                    new
+                    {
+                        placeholder = "Ingrese su apellido paterno"
+                    })
+                <br />
+                @Html.ValidationMessageFor(
+                    model => model.ApellidoPaterno,
+                    "",
+                    new { style = "color:red;" })
+
+                <br />
+
+                <label for="ApellidoMaterno">Apellido Materno</label><br />
+
+                @Html.TextBoxFor(
+                    model => model.ApellidoMaterno,
+                    new
+                    {
+                        placeholder = "Ingrese su apellido materno"
+                    })
+                <br />
+                @Html.ValidationMessageFor(
+                    model => model.ApellidoMaterno,
+                    "",
+                    new { style = "color:red;" })
+                <br />
+
+            </div>
+
+            <!-- =====================================
+                 DATOS DE ACCESO
+            ====================================== -->
+
+            <div>
+
+                <label for="Email">Correo Electrónico</label><br />
+
+                @Html.TextBoxFor(
+                    model => model.Email,
+                    new
+                    {
+                        placeholder = "ejemplo@correo.com"
+                    })
+                <br />
+                @Html.ValidationMessageFor(
+                    model => model.Email,
+                    "",
+                    new { style = "color:red;" })
+
+                <br />
+
+                <label for="Password">Contraseña</label><br />
+
+                @Html.PasswordFor(
+                    model => model.Password,
+                    new
+                    {
+                        placeholder = "Ingrese su contraseña"
+                    })
+                <br />
+                @Html.ValidationMessageFor(
+                    model => model.Password,
+                    "",
+                    new { style = "color:red;" })
+
+                <br />
+
+                <label for="ConfirmarPassword">
+                    Confirmar Contraseña
+                </label><br />
+
+                @Html.PasswordFor(
+                    model => model.ConfirmarPassword,
+                    new
+                    {
+                        placeholder = "Repita su contraseña"
+                    })
+                <br />
+                @Html.ValidationMessageFor(
+                    model => model.ConfirmarPassword,
+                    "",
+                    new { style = "color:red;" })
+
+            </div>
+
+            <br />
+
+            <!-- =====================================
+                 BOTÓN DE REGISTRO
+            ===================================== -->
+
+            <button type="submit"
+                    @(ViewBag.RegistroExitoso == true ? "disabled=\"disabled\"" : "")>
+                Registrar
+            </button>
+
+        }
+    </div>
+
+    <!-- =====================================
+         COLUMNA DERECHA
+         PANEL DE ESTADO
+    ====================================== -->
+
+    <div class="col-md-4">
+
+        @if (ViewBag.RegistroExitoso == true)
+        {
+            <!-- ===============================
+                 REGISTRO EXITOSO
+            ================================ -->
+
+            <h3>¡Registro exitoso!</h3>
+
+            <hr />
+
+            <p>
+                Ya puede iniciar sesión.
+            </p>
+
+            <br />
+
+            <button type="button"
+                    onclick="location.href='@Url.Action("Login", "Account")'">
+                Ir al Login
+            </button>
+        }
+        else
+        {
+            <!-- ===============================
+                 ESTADO INICIAL
+            ================================ -->
+
+            <h3>Crear una cuenta</h3>
+
+            <hr />
+
+            <p>
+                Regístrese primero para activar
+                el inicio de sesión.
+            </p>
+
+            <br />
+
+            <button type="button" disabled>
+                Ir al Login
+            </button>
+        }
+
+    </div>
+
+</div>
