@@ -1,0 +1,58 @@
+﻿/*
+ SEMANA 11
+ GRUPO: SCOMA116
+ CARRERA: SISTEMAS COMPUTACIONALES
+ */
+
+/* ==========================================
+   PALETA DE COLORES
+========================================== */
+
+:root {
+    --color-fondo: #000000;
+    --color-navbar: #1B1B1B;
+    --color-blanco: #F8F8F8;
+    --color-gris: #D8D8D8;
+    --color-rosa: #FF4F9A;
+    --color-rosa-claro: #FF77B5;
+}
+
+/* ==========================================
+   ESTILO GLOBAL
+========================================== */
+
+body {
+    background-color: #000000;
+    color: #F8F8F8;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+========================================== */
+
+.navbar {
+    background-color: #1B1B1B !important;
+    border-bottom: 2px solid #FF4F9A;
+}
+
+.navbar-brand {
+    color: #F8F8F8 !important;
+    font-weight: bold;
+}
+
+    .navbar-brand:hover {
+        color: #FF4F9A !important;
+    }
+
+.nav-link {
+    color: #D8D8D8 !important;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #FF4F9A !important;
+    }
+
+    .nav-link:focus {
+        color: #FF77B5 !important;
+    }
