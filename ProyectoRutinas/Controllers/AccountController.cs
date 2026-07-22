@@ -25,6 +25,8 @@ del usuario.
 =========================================================
 */
 
+using MySql.Data.MySqlClient;
+using ProyectoRutinas.Data;
 using System.Web.Mvc;
 using ProyectoRutinas.Models;
 using ProyectoRutinas.Services;
@@ -173,6 +175,33 @@ namespace ProyectoRutinas.Controllers
 
         public ActionResult Login()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(string email, string password)
+        {
+            ConexionBD conexionBD = new ConexionBD();
+
+            using (MySqlConnection conexion = conexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+
+                string sql = "SELECT * FROM tbl_usuarios WHERE EMAIL=@email AND PASSWORD=@password";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conexion);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    return RedirectToAction("Profile");
+                }
+            }
+
+            ViewBag.Error = "Correo o contraseña incorrectos";
             return View();
         }
 

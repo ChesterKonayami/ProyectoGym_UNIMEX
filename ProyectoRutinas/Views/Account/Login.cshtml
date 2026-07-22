@@ -2,6 +2,7 @@
  SEMANA 11
  GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
+ NOMBRE: ERIK ALEXANDER AGUILAR REYES
 -->
 <!--=========================================
 PROYECTO: ProyectoRutinas
@@ -23,8 +24,17 @@ sus credenciales para acceder al sistema.
     ViewBag.Title = "Iniciar Sesión";
 }
 
-<h2>Iniciar Sesión</h2>
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    <div class="login">
+        <h2>Iniciar Sesión</h2>
 
-<p>
-    Vista en construcción.
-</p>
+        <input type="email" name="email" placeholder="Correo" required />
+
+        <input type="password" name="password" placeholder="Contraseña" required />
+
+        <button type="submit">Ingresar</button>
+
+        <p style="color:red">@ViewBag.Error</p>
+    </div>
+}
