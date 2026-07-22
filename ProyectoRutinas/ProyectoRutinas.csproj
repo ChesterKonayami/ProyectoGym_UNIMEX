@@ -187,6 +187,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\FitRutinas.css" />
+    <Content Include="Documentacion\Logotipo.jpg" />
     <Content Include="Documentacion\ProyectoGym.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

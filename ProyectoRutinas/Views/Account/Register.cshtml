@@ -34,10 +34,6 @@ la base de datos.
 
 <h2>Registro de Usuario</h2>
 
-<p>
-    Complete la siguiente información para crear una cuenta.
-</p>
-
 <hr />
 
 <!-- =========================================
@@ -51,7 +47,7 @@ la base de datos.
          FORMULARIO DE REGISTRO
     ====================================== -->
 
-    <div class="col-md-8">
+    <div class="col-md-6">
 
         @using (Html.BeginForm("Register", "Account", FormMethod.Post))
         {
@@ -60,15 +56,15 @@ la base de datos.
                  DATOS PERSONALES
             ====================================== -->
 
-            <div>
+            <div style="text-align: left; width: 80%;">
 
-                <label for="Nombre">Nombre</label><br />
+                <label for="Nombre">Nombre:</label><br />
 
                 @Html.TextBoxFor(
                     model => model.Nombre,
                     new
                     {
-                        placeholder = "Ingrese su nombre"
+                        placeholder = "Ingresar nombre"
                     })
                 <br />
                 @Html.ValidationMessageFor(
@@ -78,13 +74,13 @@ la base de datos.
 
                 <br />
 
-                <label for="ApellidoPaterno">Apellido Paterno</label><br />
+                <label for="ApellidoPaterno">Apellido Paterno:</label><br />
 
                 @Html.TextBoxFor(
                     model => model.ApellidoPaterno,
                     new
                     {
-                        placeholder = "Ingrese su apellido paterno"
+                        placeholder = "Ingresar apellido paterno"
                     })
                 <br />
                 @Html.ValidationMessageFor(
@@ -94,13 +90,13 @@ la base de datos.
 
                 <br />
 
-                <label for="ApellidoMaterno">Apellido Materno</label><br />
+                <label for="ApellidoMaterno">Apellido Materno:</label><br />
 
                 @Html.TextBoxFor(
                     model => model.ApellidoMaterno,
                     new
                     {
-                        placeholder = "Ingrese su apellido materno"
+                        placeholder = "Ingresar apellido materno"
                     })
                 <br />
                 @Html.ValidationMessageFor(
@@ -115,9 +111,9 @@ la base de datos.
                  DATOS DE ACCESO
             ====================================== -->
 
-            <div>
+            <div style="text-align: left; width: 80%;">
 
-                <label for="Email">Correo Electrónico</label><br />
+                <label for="Email">Correo Electrónico:</label><br />
 
                 @Html.TextBoxFor(
                     model => model.Email,
@@ -133,13 +129,13 @@ la base de datos.
 
                 <br />
 
-                <label for="Password">Contraseña</label><br />
+                <label for="Password">Contraseña:</label><br />
 
                 @Html.PasswordFor(
                     model => model.Password,
                     new
                     {
-                        placeholder = "Ingrese su contraseña"
+                        placeholder = "Ingresar contraseña"
                     })
                 <br />
                 @Html.ValidationMessageFor(
@@ -150,14 +146,14 @@ la base de datos.
                 <br />
 
                 <label for="ConfirmarPassword">
-                    Confirmar Contraseña
+                    Confirmar Contraseña:
                 </label><br />
 
                 @Html.PasswordFor(
                     model => model.ConfirmarPassword,
                     new
                     {
-                        placeholder = "Repita su contraseña"
+                        placeholder = "Repetir contraseña"
                     })
                 <br />
                 @Html.ValidationMessageFor(
@@ -186,7 +182,7 @@ la base de datos.
          PANEL DE ESTADO
     ====================================== -->
 
-    <div class="col-md-4">
+    <div class="col-md-6">
 
         @if (ViewBag.RegistroExitoso == true)
         {
@@ -211,26 +207,40 @@ la base de datos.
         }
         else
         {
-            <!-- ===============================
-                 ESTADO INICIAL
-            ================================ -->
+            <!-- Contenedor principal centrado -->
+            <div style="text-align: center; width: 80%;">
 
-            <h3>Crear una cuenta</h3>
+                <!-- ===============================
+                     Logotipo
+                ================================ -->
+                <div style="margin-bottom: 10px;">
+                    <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
+                         alt="Logotipo del Sistema"
+                         style="max-width: 350px; width: 100%; height: auto; display: inline-block;" />
+                </div>
 
-            <hr />
+                <!-- ===============================
+                     ESTADO INICIAL
+                ================================ -->
 
-            <p>
-                Regístrese primero para activar
-                el inicio de sesión.
-            </p>
+                <p style="margin-bottom: 5px;">
+                    Regístrese primero para activar<br />
+                    el inicio de sesión.
+                </p>
 
-            <br />
+                <br />
 
-            <button type="button" disabled>
-                Ir al Login
-            </button>
+                <button type="button" disabled>
+                    Ir al Login
+                </button>
+
+            </div>
         }
 
+
+
     </div>
+
+
 
 </div>
