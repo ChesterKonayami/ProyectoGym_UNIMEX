@@ -28,12 +28,6 @@ la base de datos.
     ViewBag.Title = "Registro de Usuario";
 }
 
-<!-- =========================================
-     TÍTULO DE LA PÁGINA
-========================================= -->
-
-<h2>Registro de Usuario</h2>
-
 <hr />
 
 <!-- =========================================
@@ -52,128 +46,130 @@ la base de datos.
         @using (Html.BeginForm("Register", "Account", FormMethod.Post))
         {
 
-            <!-- =====================================
-                 DATOS PERSONALES
-            ====================================== -->
+            <div style="max-width:650px; margin:0 auto; padding-left:70px;">
 
-            <div style="text-align: left; width: 80%;">
+                <h2 style="text-align:center; margin-bottom:35px;">
+                    Registro de Usuario
+                </h2>
 
-                <label for="Nombre">Nombre:</label><br />
+                <div class="row justify-content-center gx-3">
 
-                @Html.TextBoxFor(
-                    model => model.Nombre,
-                    new
-                    {
-                        placeholder = "Ingresar nombre"
-                    })
-                <br />
-                @Html.ValidationMessageFor(
-                    model => model.Nombre,
-                    "",
-                    new { style = "color:red;" })
+                    <!-- DATOS PERSONALES -->
+                    <div class="col-auto">
 
-                <br />
+                        <label for="Nombre">Nombre:</label><br />
 
-                <label for="ApellidoPaterno">Apellido Paterno:</label><br />
+                        @Html.TextBoxFor(
+                            model => model.Nombre,
+                            new
+                            {
+                                placeholder = "Ingresar nombre"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.Nombre,
+                            "",
+                            new { style = "color:red;" })
 
-                @Html.TextBoxFor(
-                    model => model.ApellidoPaterno,
-                    new
-                    {
-                        placeholder = "Ingresar apellido paterno"
-                    })
-                <br />
-                @Html.ValidationMessageFor(
-                    model => model.ApellidoPaterno,
-                    "",
-                    new { style = "color:red;" })
+                        <br />
 
-                <br />
+                        <label for="ApellidoPaterno">Apellido Paterno:</label><br />
 
-                <label for="ApellidoMaterno">Apellido Materno:</label><br />
+                        @Html.TextBoxFor(
+                            model => model.ApellidoPaterno,
+                            new
+                            {
+                                placeholder = "Ingresar apellido paterno"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.ApellidoPaterno,
+                            "",
+                            new { style = "color:red;" })
 
-                @Html.TextBoxFor(
-                    model => model.ApellidoMaterno,
-                    new
-                    {
-                        placeholder = "Ingresar apellido materno"
-                    })
-                <br />
-                @Html.ValidationMessageFor(
-                    model => model.ApellidoMaterno,
-                    "",
-                    new { style = "color:red;" })
-                <br />
+                        <br />
+
+                        <label for="ApellidoMaterno">Apellido Materno:</label><br />
+
+                        @Html.TextBoxFor(
+                            model => model.ApellidoMaterno,
+                            new
+                            {
+                                placeholder = "Ingresar apellido materno"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.ApellidoMaterno,
+                            "",
+                            new { style = "color:red;" })
+
+                    </div>
+
+                    <!-- DATOS DE ACCESO -->
+                    <div class="col-auto">
+
+                        <label for="Email">Correo Electrónico:</label><br />
+
+                        @Html.TextBoxFor(
+                            model => model.Email,
+                            new
+                            {
+                                placeholder = "ejemplo@correo.com"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.Email,
+                            "",
+                            new { style = "color:red;" })
+
+                        <br />
+
+                        <label for="Password">Contraseña:</label><br />
+
+                        @Html.PasswordFor(
+                            model => model.Password,
+                            new
+                            {
+                                placeholder = "Ingresar contraseña"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.Password,
+                            "",
+                            new { style = "color:red;" })
+
+                        <br />
+
+                        <label for="ConfirmarPassword">
+                            Confirmar Contraseña:
+                        </label><br />
+
+                        @Html.PasswordFor(
+                            model => model.ConfirmarPassword,
+                            new
+                            {
+                                placeholder = "Repetir contraseña"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.ConfirmarPassword,
+                            "",
+                            new { style = "color:red;" })
+
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top:30px;">
+
+                    <button type="submit"
+                            @(ViewBag.RegistroExitoso == true ? "disabled=\"disabled\"" : "")>
+                        Registrar
+                    </button>
+
+                </div>
 
             </div>
-
-            <!-- =====================================
-                 DATOS DE ACCESO
-            ====================================== -->
-
-            <div style="text-align: left; width: 80%;">
-
-                <label for="Email">Correo Electrónico:</label><br />
-
-                @Html.TextBoxFor(
-                    model => model.Email,
-                    new
-                    {
-                        placeholder = "ejemplo@correo.com"
-                    })
-                <br />
-                @Html.ValidationMessageFor(
-                    model => model.Email,
-                    "",
-                    new { style = "color:red;" })
-
-                <br />
-
-                <label for="Password">Contraseña:</label><br />
-
-                @Html.PasswordFor(
-                    model => model.Password,
-                    new
-                    {
-                        placeholder = "Ingresar contraseña"
-                    })
-                <br />
-                @Html.ValidationMessageFor(
-                    model => model.Password,
-                    "",
-                    new { style = "color:red;" })
-
-                <br />
-
-                <label for="ConfirmarPassword">
-                    Confirmar Contraseña:
-                </label><br />
-
-                @Html.PasswordFor(
-                    model => model.ConfirmarPassword,
-                    new
-                    {
-                        placeholder = "Repetir contraseña"
-                    })
-                <br />
-                @Html.ValidationMessageFor(
-                    model => model.ConfirmarPassword,
-                    "",
-                    new { style = "color:red;" })
-
-            </div>
-
-            <br />
-
-            <!-- =====================================
-                 BOTÓN DE REGISTRO
-            ===================================== -->
-
-            <button type="submit"
-                    @(ViewBag.RegistroExitoso == true ? "disabled=\"disabled\"" : "")>
-                Registrar
-            </button>
-
         }
     </div>
 
@@ -236,11 +232,5 @@ la base de datos.
 
             </div>
         }
-
-
-
     </div>
-
-
-
 </div>
