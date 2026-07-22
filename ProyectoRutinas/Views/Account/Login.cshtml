@@ -24,17 +24,81 @@ sus credenciales para acceder al sistema.
     ViewBag.Title = "Iniciar Sesión";
 }
 
-@using (Html.BeginForm("Login", "Account", FormMethod.Post))
-{
-    <div class="login">
-        <h2>Iniciar Sesión</h2>
+<div class="contenedor-autenticacion" style="margin-top:60px;">
 
-        <input type="email" name="email" placeholder="Correo" required />
+    <div class="row justify-content-center align-items-center"
+         style="max-width:1000px; margin:auto;">
 
-        <input type="password" name="password" placeholder="Contraseña" required />
+        <!-- =========================================
+             PANEL IZQUIERDO
+        ========================================== -->
 
-        <button type="submit">Ingresar</button>
+        <div class="col-md-5 text-center">
 
-        <p style="color:red">@ViewBag.Error</p>
+            <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
+                 alt="Logotipo del Sistema"
+                 style="max-width:350px;
+                        width:100%;
+                        height:auto;" />
+
+            <h3 style="margin-top:25px;">
+                Bienvenido
+            </h3>
+
+            <p style="max-width:400px;
+                      margin:15px auto 0;">
+                Inicie sesión para acceder a sus rutinas,
+                registrar su progreso y continuar con su
+                entrenamiento.
+            </p>
+
+        </div>
+
+        <!-- =========================================
+             PANEL DERECHO
+        ========================================== -->
+
+        <div class="col-md-5">
+
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                <div style="max-width:320px;
+                            margin:30px auto 0;">
+
+                    <h2>Iniciar Sesión</h2>
+
+                    <br />
+
+                    <input type="email"
+                           name="email"
+                           placeholder="Correo"
+                           required
+                           class="form-control" />
+
+                    <br />
+
+                    <input type="password"
+                           name="password"
+                           placeholder="Contraseña"
+                           required
+                           class="form-control" />
+
+                    <br />
+
+                    <button type="submit">
+                        Ingresar
+                    </button>
+
+                    <p class="mensaje-error"
+                       style="margin-top:15px;">
+                        @ViewBag.Error
+                    </p>
+
+                </div>
+            }
+
+        </div>
+
     </div>
-}
+
+</div>
