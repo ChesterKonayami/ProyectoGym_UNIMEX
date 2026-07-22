@@ -180,57 +180,49 @@ la base de datos.
 
     <div class="col-md-6">
 
-        @if (ViewBag.RegistroExitoso == true)
-        {
-            <!-- ===============================
-                 REGISTRO EXITOSO
-            ================================ -->
+        <!-- ===============================
+             Logotipo
+        ================================ -->
 
-            <h3>¡Registro exitoso!</h3>
+        <div style="text-align:center; margin-bottom:10px;">
 
-            <hr />
+            <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
+                 alt="Logotipo del Sistema"
+                 style="max-width:350px;
+                    width:100%;
+                    height:auto;
+                    display:inline-block;" />
 
-            <p>
-                Ya puede iniciar sesión.
+        </div>
+
+        <!-- ===============================
+             ESTADO INICIAL
+        ================================ -->
+
+        <div style="text-align:center;">
+
+            <p style="margin-bottom:2px;">
+                Regístrese primero para activar<br />
+                el inicio de sesión.
             </p>
 
             <br />
 
-            <button type="button"
-                    onclick="location.href='@Url.Action("Login", "Account")'">
-                Ir al Login
-            </button>
-        }
-        else
-        {
-            <!-- Contenedor principal centrado -->
-            <div style="text-align: center; width: 80%;">
-
-                <!-- ===============================
-                     Logotipo
-                ================================ -->
-                <div style="margin-bottom: 10px;">
-                    <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
-                         alt="Logotipo del Sistema"
-                         style="max-width: 350px; width: 100%; height: auto; display: inline-block;" />
-                </div>
-
-                <!-- ===============================
-                     ESTADO INICIAL
-                ================================ -->
-
-                <p style="margin-bottom: 5px;">
-                    Regístrese primero para activar<br />
-                    el inicio de sesión.
-                </p>
-
-                <br />
-
+            @if (ViewBag.RegistroExitoso == true)
+            {
+                <button type="button"
+                        onclick="location.href='@Url.Action("Login","Account")'">
+                    Ir al Login
+                </button>
+            }
+            else
+            {
                 <button type="button" disabled>
                     Ir al Login
                 </button>
+            }
 
-            </div>
-        }
+        </div>
+
     </div>
 </div>
