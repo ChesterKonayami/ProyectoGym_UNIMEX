@@ -1,162 +1,165 @@
-﻿<!--
- SEMANA 11
- GRUPO: SCOMA116
- CARRERA: SISTEMAS COMPUTACIONALES
-NOMBRE:FLORES GARDUÑO FERNANDA ROBERTA
--->
-<!--
-=========================================================
-PROYECTO: ProyectoRutinas
-ARCHIVO: Index.cshtml
-NOMBRE:FLORES GARDUÑO FERNANDA ROBERTA
+﻿@{
+    ViewBag.Title = "Inicio";
+}
 
-MÓDULO:
-Interfaz de Usuario
+<link href="~/Content/FitRutinas.css" rel="stylesheet" />
 
-DESCRIPCIÓN:
-Vista principal de bienvenida de la aplicación.
+<style>
 
-RESPONSABILIDAD:
-Presentar la aplicación al usuario, mostrar una
-breve introducción e invitarlo a comenzar la
-experiencia dentro del sistema.
-=========================================================
--->
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #111, #000);
+        color: white;
+        text-align: center;
+    }
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <title>Fit Rutinas</title>
+    .contenedor {
+        padding: 60px 20px;
+    }
 
-    <!-- Archivos CSS -->
-    <link href="~/Content/FitRutinas.css" rel="stylesheet" />
+    .logo-app {
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #111, #000);
-            color: white;
-            text-align: center;
-        }
+    h1 {
+        color: #ff4fa3;
+        font-size: 55px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
 
-        .contenedor {
-            padding: 60px 20px;
-        }
+    h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
 
-        /* Estilo del Logo con tamaño y separación */
-        .logo-app {
-            width: 400px; /* Tamaño más grande */
-            height: auto;
-            margin-bottom: 30px; /* Espacio entre el logo y FIT RUTINAS */
-        }
+    .descripcion {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: justify;
+        line-height: 1.8;
+    }
 
-        /* Estilo del título principal */
-        h1 {
-            color: #ff4fa3;
-            font-size: 55px;
-            margin-top: 0;
-            margin-bottom: 25px; /* Espacio entre FIT RUTINAS y ¡Bienvenido! */
-        }
-
-        /* Estilo del subtítulo */
-        h2 {
-            font-size: 28px;
-            margin-bottom: 20px; /* Espacio entre ¡Bienvenido! y el texto */
-        }
-
-        p {
+        .descripcion p {
             color: #d9d9d9;
             font-size: 18px;
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
+            margin-bottom: 25px;
         }
 
-        .beneficios {
-            margin-top: 40px;
-        }
+    .mensaje-final {
+        text-align: center;
+        font-weight: bold;
+    }
 
-            .beneficios div {
-                margin: 15px;
-                font-size: 20px;
-            }
+    .beneficios {
+        margin-top: 40px;
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 40px;
-            background: #ff4fa3;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 30px;
+        .beneficios div {
+            margin: 15px;
             font-size: 20px;
-            transition: .3s;
         }
 
-            .btn:hover {
-                background: #ff2d88;
-            }
-    </style>
-</head>
+    .btn-principal {
+        display: inline-block;
+        margin-top: 40px;
+        background: #ff4fa3;
+        color: white;
+        padding: 15px 40px;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 20px;
+        transition: .3s;
+    }
 
-<body>
+        .btn-principal:hover {
+            background: #ff2d88;
+            color: white;
+            text-decoration: none;
+        }
+</style>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-        <!-- LOGO DE LA APP -->
-       
-        <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
-             alt="Logotipo del Sistema"
-             style="max-width:350px;
-            width:100%;
-            height:auto;" />
+    <!--=========================================
+        LOGOTIPO
+    ==========================================-->
 
-        <h1>FIT RUTINAS</h1>
+    <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
+         alt="Logotipo del Sistema"
+         class="logo-app" />
 
-        <h2>¡Bienvenido!</h2>
+    <!--=========================================
+        TÍTULO
+    ==========================================-->
 
-        <div style="max-width:700px; margin:0 auto; text-align:justify; line-height:1.8;">
+    <h1>FIT RUTINAS</h1>
 
-            <p>
-                En Fit Rutinas creemos que cada persona tiene el potencial de alcanzar una vida más saludable y activa. No importa si estás comenzando desde cero o si ya tienes experiencia entrenando, aquí encontrarás las herramientas necesarias para avanzar a tu propio ritmo.
-            </p>
-            <br />
+    <h2>¡Bienvenido!</h2>
 
-            <p>
-                Nuestra aplicación está diseñada para ayudarte a crear hábitos saludables mediante rutinas organizadas, fáciles de seguir y adaptadas a tus objetivos. Además, podrás registrar tu progreso, mantenerte motivado y dar seguimiento a cada uno de tus logros.
-            </p>
-            <br />
+    <!--=========================================
+        DESCRIPCIÓN
+    ==========================================-->
 
-            <p>
-                Al registrarte, tendrás acceso a una experiencia personalizada donde podrás guardar tus rutinas, consultar tu historial de entrenamiento y continuar tu progreso desde cualquier momento. Cada entrenamiento realizado es un paso más hacia una mejor versión de ti.
-            </p>
-            <br />
+    <div class="descripcion">
 
-            <p>
-                No esperes al momento perfecto para empezar. El cambio comienza con una decisión, y hoy puede ser el primer día de una nueva etapa en tu vida.
-            </p>
-            <br />
+        <p>
+            En Fit Rutinas creemos que cada persona tiene el potencial de alcanzar una vida más saludable y activa.
+            No importa si estás comenzando desde cero o si ya tienes experiencia entrenando, aquí encontrarás las
+            herramientas necesarias para avanzar a tu propio ritmo.
+        </p>
 
-            <p style="text-align:center; font-weight:bold;">
-                ¡Regístrate y comienza tu transformación con Fit Rutinas! 💖💪
-            </p>
+        <p>
+            Nuestra aplicación está diseñada para ayudarte a crear hábitos saludables mediante rutinas organizadas,
+            fáciles de seguir y adaptadas a tus objetivos. Además, podrás registrar tu progreso, mantenerte motivado
+            y dar seguimiento a cada uno de tus logros.
+        </p>
 
-        </div>
+        <p>
+            Al registrarte, tendrás acceso a una experiencia personalizada donde podrás guardar tus rutinas,
+            consultar tu historial de entrenamiento y continuar tu progreso desde cualquier momento.
+            Cada entrenamiento realizado es un paso más hacia una mejor versión de ti.
+        </p>
 
-        <div class="beneficios">
-            <div>💪 Rutinas personalizadas</div>
-            <div>📅 Planifica tus entrenamientos</div>
-            <div>📈 Lleva el control de tu progreso</div>
-            <div>🏆 Cumple tus objetivos</div>
-        </div>
+        <p>
+            No esperes al momento perfecto para empezar. El cambio comienza con una decisión,
+            y hoy puede ser el primer día de una nueva etapa en tu vida.
+        </p>
 
-        <a href="/Home/Rutina" class="btn">
-            Comenzar
-        </a>
+        <p class="mensaje-final">
+            ¡Regístrate y comienza tu transformación con Fit Rutinas! 💖💪
+        </p>
 
     </div>
 
-</body>
-</html>
+    <!--=========================================
+        BENEFICIOS
+    ==========================================-->
+
+    <div class="beneficios">
+
+        <div>💪 Rutinas personalizadas</div>
+
+        <div>📅 Planifica tus entrenamientos</div>
+
+        <div>📈 Lleva el control de tu progreso</div>
+
+        <div>🏆 Cumple tus objetivos</div>
+
+    </div>
+
+    <!--=========================================
+        BOTÓN
+    ==========================================-->
+
+    <a href="@Url.Action("Rutina", "Home")"
+       class="btn-principal">
+
+        Comenzar
+
+    </a>
+
+</div>
