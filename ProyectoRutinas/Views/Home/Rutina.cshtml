@@ -2,6 +2,8 @@
  SEMANA 11
  GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
+
+ Nombre: Adhara Paola Baas Salazar
 -->
 <!--=========================================
 PROYECTO: ProyectoRutinas
@@ -25,8 +27,122 @@ sistema.
     ViewBag.Title = "Rutina de Entrenamiento";
 }
 
-<h2>Rutina de Entrenamiento</h2>
 
-<p>
-    Vista en construcción.
-</p>
+<div class="container mt-4">
+    <h2 class="text-center">Rutina de Entrenamiento</h2>
+    <hr />
+
+    <div class="mb-3">
+        <label class="form-label"><strong>Selecciona un grupo muscular:</strong></label>
+
+        <select id="grupoMuscular" class="form-control">
+            <option value="">-- Selecciona una opción --</option>
+            <option value="pecho">Pecho</option>
+            <option value="espalda">Espalda</option>
+            <option value="piernas">Piernas</option>
+            <option value="hombros">Hombros</option>
+            <option value="biceps">Bíceps</option>
+            <option value="triceps">Tríceps</option>
+            <option value="abdomen">Abdomen</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary" onclick="mostrarRutina()">
+        Mostrar Rutina
+    </button>
+
+    <hr />
+
+    <div id="resultado" class="mt-4"></div>
+</div>
+
+<script>
+
+    function mostrarRutina() {
+
+        var grupo = document.getElementById("grupoMuscular").value;
+        var resultado = document.getElementById("resultado");
+
+        var rutinas = {
+
+            pecho: `
+        <h3>Pecho</h3>
+        <ul>
+            <li>Press de banca - 4 x 10</li>
+            <li>Press inclinado - 3 x 12</li>
+            <li>Aperturas con mancuernas - 3 x 15</li>
+            <li>Fondos - 3 x 12</li>
+        </ul>
+        `,
+
+            espalda: `
+        <h3>Espalda</h3>
+        <ul>
+            <li>Dominadas - 4 x 8</li>
+            <li>Remo con barra - 4 x 10</li>
+            <li>Jalon al pecho - 3 x 12</li>
+            <li>Peso muerto - 3 x 8</li>
+        </ul>
+        `,
+
+            piernas: `
+        <h3>Piernas</h3>
+        <ul>
+            <li>Sentadilla - 4 x 10</li>
+            <li>Prensa - 3 x 12</li>
+            <li>Peso muerto rumano - 3 x 10</li>
+            <li>Extensión de piernas - 3 x 15</li>
+        </ul>
+        `,
+
+            hombros: `
+        <h3>Hombros</h3>
+        <ul>
+            <li>Press militar - 4 x 10</li>
+            <li>Elevaciones laterales - 3 x 15</li>
+            <li>Elevaciones frontales - 3 x 12</li>
+            <li>Pájaros - 3 x 15</li>
+        </ul>
+        `,
+
+            biceps: `
+        <h3>Bíceps</h3>
+        <ul>
+            <li>Curl con barra - 4 x 10</li>
+            <li>Curl martillo - 3 x 12</li>
+            <li>Curl concentrado - 3 x 12</li>
+        </ul>
+        `,
+
+            triceps: `
+        <h3>Tríceps</h3>
+        <ul>
+            <li>Fondos - 4 x 10</li>
+            <li>Extensión en polea - 3 x 12</li>
+            <li>Press francés - 3 x 10</li>
+        </ul>
+        `,
+
+            abdomen: `
+        <h3>Abdomen</h3>
+        <ul>
+            <li>Crunch - 3 x 20</li>
+            <li>Elevación de piernas - 3 x 15</li>
+            <li>Plancha - 3 x 45 segundos</li>
+        </ul>
+        `
+        };
+
+        if (grupo == "") {
+            resultado.innerHTML = "<p style='color:red;'>Selecciona un grupo muscular.</p>";
+        } else {
+            resultado.innerHTML = rutinas[grupo];
+        }
+
+    }
+
+</script>
+
+<a href="@Url.Action("Register", "Account")" class="btn btn-success mt-3">
+    Registrarse
+</a>
