@@ -27,9 +27,10 @@ del usuario.
 
 using MySql.Data.MySqlClient;
 using ProyectoRutinas.Data;
-using System.Web.Mvc;
 using ProyectoRutinas.Models;
 using ProyectoRutinas.Services;
+using System;
+using System.Web.Mvc;
 
 namespace ProyectoRutinas.Controllers
 {
@@ -197,6 +198,7 @@ namespace ProyectoRutinas.Controllers
 
                 if (dr.Read())
                 {
+                    Session["ID_USUARIO"] = dr["ID_USUARIO"];
                     return RedirectToAction("Profile");
                 }
             }
@@ -211,7 +213,50 @@ namespace ProyectoRutinas.Controllers
 
         public ActionResult Profile()
         {
-            return View();
+            // =========================================
+            // VALIDAR QUE EXISTA UNA SESIÓN
+            // =========================================
+
+            if (Session["ID_USUARIO"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            int idUsuario = Convert.ToInt32(Session["ID_USUARIO"]);
+
+            Usuario usuario = new Usuario();
+
+            ConexionBD conexionBD = new ConexionBD();
+
+            using (MySqlConnection conexion = conexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+
+                string sql = @"SELECT
+                           ID_USUARIO,
+                           NOMBRE,
+                           APELLIDO_PATERNO,
+                           APELLIDO_MATERNO,
+                           EMAIL
+                       FROM tbl_usuarios
+                       WHERE ID_USUARIO = @idUsuario";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conexion);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    usuario.IdUsuario = Convert.ToInt32(dr["ID_USUARIO"]);
+                    usuario.Nombre = dr["NOMBRE"].ToString();
+                    usuario.ApellidoPaterno = dr["APELLIDO_PATERNO"].ToString();
+                    usuario.ApellidoMaterno = dr["APELLIDO_MATERNO"].ToString();
+                    usuario.Email = dr["EMAIL"].ToString();
+                }
+            }
+
+            return View(usuario);
         }
     }
 }

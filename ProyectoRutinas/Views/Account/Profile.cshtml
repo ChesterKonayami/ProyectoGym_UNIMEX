@@ -19,12 +19,160 @@ que ha iniciado sesión y servir como punto
 de acceso a futuras funciones del sistema.
 ==========================================-->
 
+@model ProyectoRutinas.Models.Usuario
+
 @{
     ViewBag.Title = "Mi Perfil";
 }
 
-<h2>Mi Perfil</h2>
+<div>
 
-<p>
-    Vista en construcción.
-</p>
+    <!--=========================================
+        TÍTULO
+    ==========================================-->
+
+    <h2 class="text-center">
+        Mi Perfil
+    </h2>
+
+    <hr />
+
+    <!--=========================================
+        MENSAJE DE BIENVENIDA
+    ==========================================-->
+
+    <h3 class="text-center">
+        ¡Bienvenido a Fit Rutinas!
+    </h3>
+
+    <p class="text-center"
+       style="margin-bottom:35px;">
+        Desde esta sección podrás consultar la información de tu cuenta
+        y acceder a las diferentes funciones disponibles.
+    </p>
+
+</div>
+
+<!--=========================================
+    INFORMACIÓN DEL USUARIO
+==========================================-->
+
+<div class="row justify-content-center align-items-center"
+     style="max-width:950px;
+            margin:0 auto;">
+
+    <!--=========================================
+        DATOS DEL USUARIO
+    ==========================================-->
+
+    <div class="col-md-8">
+
+        <table class="table table-bordered"
+               style="background-color:#22262b;
+                      color:white;">
+
+            <tr>
+
+                <th style="width:35%;
+                           background-color:#1b1f23;
+                           color:white;">
+                    Nombre
+                </th>
+
+                <td style="background-color:#22262b;
+                           color:white;">
+                    @Model.Nombre
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <th style="background-color:#1b1f23;
+                           color:white;">
+                    Apellido paterno
+                </th>
+
+                <td style="background-color:#22262b;
+                           color:white;">
+                    @Model.ApellidoPaterno
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <th style="background-color:#1b1f23;
+                           color:white;">
+                    Apellido materno
+                </th>
+
+                <td style="background-color:#22262b;
+                           color:white;">
+                    @Model.ApellidoMaterno
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <th style="background-color:#1b1f23;
+                           color:white;">
+                    Correo electrónico
+                </th>
+
+                <td style="background-color:#22262b;
+                           color:white;">
+                    @Model.Email
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!--=========================================
+        FOTO DE PERFIL
+    ==========================================-->
+
+    <div class="col-md-4 text-center">
+
+        <img src="@Url.Content("~/Documentacion/perfil.png")"
+             alt="Foto de perfil"
+             style="width:170px;
+                    height:170px;
+                    border-radius:50%;
+                    border:4px solid #ff4f9a;
+                    object-fit:cover;" />
+
+        <br />
+        <br />
+
+        <h4>@Model.Nombre</h4>
+
+    </div>
+
+</div>
+
+<br />
+
+<!--=========================================
+    BOTONES
+==========================================-->
+
+<div class="text-center">
+
+    <button type="button"
+            onclick="location.href='@Url.Action("Rutina","Home")'">
+        Ver Rutinas
+    </button>
+
+    &nbsp;&nbsp;
+
+    <button type="button"
+            onclick="location.href='@Url.Action("Index","Home")'">
+        Cerrar sesión
+    </button>
+    <br />
+</div>
