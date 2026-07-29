@@ -1,5 +1,5 @@
 ﻿/*
- SEMANA 11
+ SEMANA 12
  GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
 
@@ -56,6 +56,7 @@ namespace ProyectoRutinas.Models
         // =========================================
         // DATOS DE ACCESO
         // =========================================
+        // Erik Aguilar Reyes y Joseph Mauricio Mondragón Moreno
 
         [Required(ErrorMessage = "Ingrese un correo electrónico.")]
         [EmailAddress(ErrorMessage = "Ingrese un correo electrónico.")]
@@ -77,3 +78,21 @@ namespace ProyectoRutinas.Models
         public string ConfirmarPassword { get; set; }
     }
 }
+/*
+=========================================================
+PROYECTO: Fit Rutinas
+
+VERSIÓN: 1.0
+ESTADO: Versión Final (MVP)
+FECHA: 27 y 29 de julio de 2026
+CARRERA: Sistemas Compuacionales
+GRUPO: SCOMA116
+
+Erik Alexander Aguilar Reyes
+Adhara Paola Bass Salazar
+Fernanda Roberta Flores Garduño
+Joseph Mauricio Mondragón Moreno
+
+Esta versión corresponde a la entrega final del sistema.
+=========================================================
+ */

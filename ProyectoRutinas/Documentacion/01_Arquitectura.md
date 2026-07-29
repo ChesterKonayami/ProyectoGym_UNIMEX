@@ -4,7 +4,7 @@
 
 ## Proyecto
 
-**Nombre:** ProyectoRutinas
+**Nombre:** Fit Rutinas
 
 **Tipo de aplicación:** ASP.NET MVC (.NET Framework)
 

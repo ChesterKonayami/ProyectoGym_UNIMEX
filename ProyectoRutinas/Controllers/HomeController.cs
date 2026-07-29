@@ -1,5 +1,5 @@
 ﻿/*
- SEMANA 11
+ SEMANA 12
  GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
 */
@@ -32,6 +32,7 @@ namespace ProyectoRutinas.Controllers
         // =========================================
         // Página principal de la aplicación
         // =========================================
+        // Joseph Mauricio Mondragón Moreno
         public ActionResult Index()
         {
             return View();
@@ -46,3 +47,21 @@ namespace ProyectoRutinas.Controllers
         }
     }
 }
+/*
+=========================================================
+PROYECTO: Fit Rutinas
+
+VERSIÓN: 1.0
+ESTADO: Versión Final (MVP)
+FECHA: 27 y 29 de julio de 2026
+CARRERA: Sistemas Compuacionales
+GRUPO: SCOMA116
+
+Erik Alexander Aguilar Reyes
+Adhara Paola Bass Salazar
+Fernanda Roberta Flores Garduño
+Joseph Mauricio Mondragón Moreno
+
+Esta versión corresponde a la entrega final del sistema.
+=========================================================
+ */
