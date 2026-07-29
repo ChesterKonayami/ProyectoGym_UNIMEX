@@ -2,6 +2,8 @@
  SEMANA 11
  GRUPO: SCOMA116
  CARRERA: SISTEMAS COMPUTACIONALES
+
+ RAMA: MONDRAGON MORENO JOSEPH MAURICIO
 -->
 <!--=========================================
 PROYECTO: ProyectoRutinas
@@ -20,12 +22,207 @@ una nueva cuenta de usuario y almacenarla en
 la base de datos.
 ==========================================-->
 
+@model ProyectoRutinas.Models.Usuario
+
 @{
     ViewBag.Title = "Registro de Usuario";
 }
 
-<h2>Registro de Usuario</h2>
+<hr />
 
-<p>
-    Vista en construcción.
-</p>
+<!-- =========================================
+     CONTENEDOR PRINCIPAL
+========================================= -->
+
+<div class="row">
+
+    <!-- =====================================
+         COLUMNA IZQUIERDA
+         FORMULARIO DE REGISTRO
+    ====================================== -->
+
+    <div class="col-md-6">
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+
+            <div style="max-width:650px; margin:0 auto; padding-left:70px;">
+
+                <h2 style="text-align:center; margin-bottom:35px;">
+                    Registro de Usuario
+                </h2>
+
+                <div class="row justify-content-center gx-3">
+
+                    <!-- DATOS PERSONALES -->
+                    <div class="col-auto">
+
+                        <label for="Nombre">Nombre:</label><br />
+
+                        @Html.TextBoxFor(
+                            model => model.Nombre,
+                            new
+                            {
+                                placeholder = "Ingresar nombre"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.Nombre,
+                            "",
+                            new { style = "color:red;" })
+
+                        <br />
+
+                        <label for="ApellidoPaterno">Apellido Paterno:</label><br />
+
+                        @Html.TextBoxFor(
+                            model => model.ApellidoPaterno,
+                            new
+                            {
+                                placeholder = "Ingresar apellido paterno"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.ApellidoPaterno,
+                            "",
+                            new { style = "color:red;" })
+
+                        <br />
+
+                        <label for="ApellidoMaterno">Apellido Materno:</label><br />
+
+                        @Html.TextBoxFor(
+                            model => model.ApellidoMaterno,
+                            new
+                            {
+                                placeholder = "Ingresar apellido materno"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.ApellidoMaterno,
+                            "",
+                            new { style = "color:red;" })
+
+                    </div>
+
+                    <!-- DATOS DE ACCESO -->
+                    <div class="col-auto">
+
+                        <label for="Email">Correo Electrónico:</label><br />
+
+                        @Html.TextBoxFor(
+                            model => model.Email,
+                            new
+                            {
+                                placeholder = "ejemplo@correo.com"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.Email,
+                            "",
+                            new { style = "color:red;" })
+
+                        <br />
+
+                        <label for="Password">Contraseña:</label><br />
+
+                        @Html.PasswordFor(
+                            model => model.Password,
+                            new
+                            {
+                                placeholder = "Ingresar contraseña"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.Password,
+                            "",
+                            new { style = "color:red;" })
+
+                        <br />
+
+                        <label for="ConfirmarPassword">
+                            Confirmar Contraseña:
+                        </label><br />
+
+                        @Html.PasswordFor(
+                            model => model.ConfirmarPassword,
+                            new
+                            {
+                                placeholder = "Repetir contraseña"
+                            })
+                        <br />
+                        @Html.ValidationMessageFor(
+                            model => model.ConfirmarPassword,
+                            "",
+                            new { style = "color:red;" })
+
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top:30px;">
+
+                    <button type="submit"
+                            @(ViewBag.RegistroExitoso == true ? "disabled=\"disabled\"" : "")>
+                        Registrar
+                    </button>
+
+                </div>
+
+            </div>
+        }
+    </div>
+
+    <!-- =====================================
+         COLUMNA DERECHA
+         PANEL DE ESTADO
+    ====================================== -->
+
+    <div class="col-md-6">
+
+        <!-- ===============================
+             Logotipo
+        ================================ -->
+
+        <div style="text-align:center; margin-bottom:10px;">
+
+            <img src="@Url.Content("~/Documentacion/Logotipo.jpg")"
+                 alt="Logotipo del Sistema"
+                 style="max-width:350px;
+                    width:100%;
+                    height:auto;
+                    display:inline-block;" />
+
+        </div>
+
+        <!-- ===============================
+             ESTADO INICIAL
+        ================================ -->
+
+        <div style="text-align:center;">
+
+            <p style="margin-bottom:2px;">
+                Regístrese primero para activar<br />
+                el inicio de sesión.
+            </p>
+
+            <br />
+
+            @if (ViewBag.RegistroExitoso == true)
+            {
+                <button type="button"
+                        onclick="location.href='@Url.Action("Login","Account")'">
+                    Ir al Login
+                </button>
+            }
+            else
+            {
+                <button type="button" disabled>
+                    Ir al Login
+                </button>
+            }
+
+        </div>
+
+    </div>
+</div>
