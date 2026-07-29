@@ -1,4 +1,6 @@
-﻿# Distribución del Trabajo
+﻿# JOSEPH MAURICIO MONDRAGON MORENO
+
+# Distribución del Trabajo
 
 ## Objetivo
 
@@ -8,12 +10,13 @@ Definir la organización del equipo de desarrollo, asignando responsabilidades, 
 
 # Integrantes del Equipo
 
-|    Integrante      |    Rama Git      | Responsabilidad |   Estado  |
-|--------------------|------------------|-----------------|-----------|
-| Erik Aguilar       | Pendiente        |       Pendiente | Pendiente |
-| Adhara Baas        | Pendiente        |       Pendiente | Pendiente |
-| Fernanda Flores    | Pendiente        |       Pendiente | Pendiente |
-| Mauricio Mondragón | Pendiente        |       Pendiente | Pendiente |
+|    Integrante      |        Rama Git          |        Responsabilidad                                                                                                                           |   Estado  |
+|--------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Erik Aguilar       | feature/ErikAguilar      | Desarrollo del módulo de autenticación (Login), validación de credenciales e inicio de sesión.                                                   | Finalizado|
+| Adhara Baas        | feature/AdharaBass       | Desarrollo de la vista de rutinas de demostración (Rutina) y navegación pública del sistema                                                      | Finalizado|
+| Fernanda Flores    | feature/FernandaFlores   | Desarrollo de la página principal (Index), presentación del sistema y navegación inicial.                                                        | Finalizado|
+| Mauricio Mondragón | feature/MauricioMondragon| Desarrollo del registro de usuarios, conexión con la base de datos, perfil del usuario, integración de módulos, documentación y pruebas finales. | Finalizado|
+| Mauricio Mondragón | feature/integracion 	    | Integración de los módulos desarrollados por los integrantes del equipo, pruebas finales y documentación del proyecto.                           | Finalizado|
 
 ---
 
